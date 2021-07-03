@@ -1,0 +1,11 @@
+<% if question.unanswered? %>
+  <%= link_to answered_question_path(question), method: :post do %>
+    <button>Mark Answered</button>
+  <% end %>
+<% end %>
+
+<% if question.answered? %>
+  <%= link_to unanswered_question_path(question), method: :post do %>
+    <button>Reset</button>
+  <% end %>
+<% end %>

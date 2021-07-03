@@ -1,0 +1,19 @@
+<table>
+  <thead>
+    <tr>
+      <th>Author</th>
+      <th>Question</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% questions.each do |question| %>
+      <tr>
+        <td><%= link_to question.author, question %></td>
+        <td><%= truncate question.note, length: 150 %></td>
+        <td><%= render partial: "actions", locals: { question: question } %></th>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

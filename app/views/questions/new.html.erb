@@ -1,0 +1,14 @@
+<h1> Need some bad advice? </h1>
+
+<%= form_for @question do |f| %>
+  <% if @question.errors.any? %>
+    <% @question.errors.messages.each do |message| %>
+      <p><%= message&.second&.first %></p>
+    <% end %>
+  <% end %> 
+  <%= f.label :author %>
+  <%= f.text_field :author, placeholder: "Your name (optional)"%>
+  <%= f.label :note, "Question" %>
+  <%= f.text_area :note, placeholder: "What do you need advice on?"%>
+  <%= f.submit "Ask Question" %>
+<% end %>

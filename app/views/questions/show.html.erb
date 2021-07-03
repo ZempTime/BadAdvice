@@ -1,0 +1,14 @@
+<br>
+Status: <%= @question.status %>
+<br>
+<blockquote>
+  <%= @question.note %>
+  <br>
+</blockquote>
+<cite>
+  By <%="#{@question.author} @ #{@question.ip} around #{time_ago_in_words(@question.created_at)} ago" %>
+</cite>
+
+<br>
+<br>
+<%= render partial: "actions", locals: {question: @question} %>

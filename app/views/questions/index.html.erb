@@ -1,0 +1,22 @@
+<h2> Unanswered Questions </h2>
+<% if @questions.none? %>
+  <p>
+    There are no unanswered questions
+  </p>
+<% end %>
+
+<% if @questions.any? %>
+  <%= render partial: "table", locals: {questions: @questions} %>
+<% end %>
+
+<h2> Answered Questions </h2>
+
+<% if @answered_questions.none? %>
+  <p>
+    There are no unanswered questions
+  </p>
+<% end %>
+
+<% if @answered_questions.any? %>
+  <%= render partial: "table", locals: {questions: @answered_questions} %>
+<% end %>
